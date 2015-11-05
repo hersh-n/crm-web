@@ -18,8 +18,8 @@ class Contact
     @@id = 1
   end
 
-  def delete
-    @@contacts.delete(self)
+  def remove
+    @@contacts.delete_if { |contact| contact.id == self.id }
   end
 
   def self.all
