@@ -1,0 +1,24 @@
+h2 {
+	font-family: 'Poiret One', cursive;
+
+
+}
+
+.button {
+
+	display: block;
+	height: 50px;
+	width: 150px;
+	background: #707070;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+	border-radius: 8px;
+
+}
+
+a.button {
+	text-decoration: none;
+	font-color: #383838;
+
+}
+
