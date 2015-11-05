@@ -1,7 +1,15 @@
 <h2>All Contacts</h2>
+<form class="searchbar" action="/contacts/search" method="post" >
+			<label for="first_name">Contact Search</label>
+			<input type="text" name="first_name" placeholder="e.g John">
+</form>
 
 <ul>
-<% Contact.all.each do |contact| %>
-  <li><%= contact.first_name %> <%= contact.last_name %></li>
+<% @contacts.each do |contact| %>
+  <li class="button">
+  	<a href="/contacts/<%= contact.id %>">
+  	<%= contact.first_name %>  <%= contact.last_name %> </a>
+  </li>
 <% end %>
 </ul>
+
