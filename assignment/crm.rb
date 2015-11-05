@@ -17,13 +17,19 @@ get '/contacts/new' do
   erb :new_contact
 end
 
-get "/contacts/1000" do
-  @contact = Contact.find(1000)
-  erb :show_contact
+get "/contacts/:id" do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
 
 post '/contacts' do
 	Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
 	redirect to('/contacts')
 end
+
+
 
